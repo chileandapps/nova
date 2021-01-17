@@ -29,6 +29,40 @@ export const DashboardContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+
+   h2 {
+    color: #8385a9;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+   h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #fb5e84;
+    text-align: center;
+  }
+`;
+
+export const HeaderBox = styled.div`
+  width: 100%;
+  /* background-color: #343650;
+  box-shadow: 8px 10px rgba(0, 0, 0, 0.2); */
+  display:flex;
+  justify-content: space-evenly;
+
+  /* h2{
+    color: white;
+  } */
+  h3{
+    font-size: 1.5em;
+  }
+`;
+
+export const BoxContainer = styled.div`
+width: 100%;
+display:flex;
+justify-content: space-around;
 `;
 
 export const Box = styled.div`
@@ -39,18 +73,6 @@ export const Box = styled.div`
   background-color: #343650;
   box-shadow: 8px 10px rgba(0, 0, 0, 0.2);
 
-  & h2 {
-    color: #8385a9;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  & h3 {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    color: #fb5e84;
-    text-align: center;
-  }
 
 
   & .mb-10 {
@@ -75,4 +97,10 @@ export const Button = styled.button`
   width: ${(props) => (props.fill ? "100%" : "200px")};
   box-shadow: 1px 2px rgba(255, 0, 0, 0.8);
   border-radius: 2px;
+`;
+
+export const ButtonLarge = styled(Button)`
+  width: 280px;
+  font-size: 22px;
+  padding: 14px 0;
 `;
