@@ -1,0 +1,1 @@
+Tabla para mostrar las inversiones del usuario
