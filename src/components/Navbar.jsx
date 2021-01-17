@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "./../assets/logo.png";
 import styled from "styled-components";
+import {CONTRACT_ADDRESS} from "./../constant"
+import urljoin from 'url-join';
 
 const LogoContainer = styled.div`
   display:flex;
@@ -40,7 +42,11 @@ const NavbarContainer = styled.div`
     border-radius: 2px 2px;
   }
 `;
-
+const getContractLink = () => {
+  const link = urljoin(process.env.REACT_APP_NODE,'contract',CONTRACT_ADDRESS)
+  console.log(link);
+  return link;
+}
 const Navbar = ({ render, userLogged, walletInfo }) => {
   const maskAddress = () => {
     return;
@@ -66,7 +72,7 @@ const Navbar = ({ render, userLogged, walletInfo }) => {
             <Link to="/about">About</Link>
           </div>
           <div className="nav-item">
-            <a href="#">Contract</a>
+            <a target="_blank" href={getContractLink()}>Contract</a>
           </div>
 
           <div onClick={login} className="nav-item budget">

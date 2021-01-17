@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
 import { ButtonLarge } from "./../components/DashboardStyled";
 
 const HomeContainer = styled.div`
@@ -56,7 +55,7 @@ export const Home = () => {
 
   return (
     <HomeContainer>
-      <h1>TRON NOVA</h1>
+      <h1>NOVA TRON</h1>
       <p>
         Decentralized Smart-Contract Provides Fairness and Transparency. Earn
         25% daily profit up to 200% of your investment. Join Today!

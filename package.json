@@ -1,6 +1,6 @@
 {
-  "homepage": "http://chileandapps.github.io/nova",
-  "name": "tron-capital",
+  "homepage": "https://chileandapps.github.io/nova",
+  "name": "nova-tron",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +17,7 @@
     "react-transition-group": "1.x",
     "styled-components": "^5.2.1",
     "tronweb": "^3.2.1",
+    "url-join": "^4.0.1",
     "web-vitals": "^0.2.4"
   },
   "resolutions": {
