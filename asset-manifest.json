@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/nova/static/css/main.72b00848.chunk.css",
-    "main.js": "/nova/static/js/main.31e78bc0.chunk.js",
-    "main.js.map": "/nova/static/js/main.31e78bc0.chunk.js.map",
-    "runtime-main.js": "/nova/static/js/runtime-main.1256413c.js",
-    "runtime-main.js.map": "/nova/static/js/runtime-main.1256413c.js.map",
-    "static/js/2.4a64d583.chunk.js": "/nova/static/js/2.4a64d583.chunk.js",
-    "static/js/2.4a64d583.chunk.js.map": "/nova/static/js/2.4a64d583.chunk.js.map",
+    "main.js": "/nova/static/js/main.8ec24e39.chunk.js",
+    "main.js.map": "/nova/static/js/main.8ec24e39.chunk.js.map",
+    "runtime-main.js": "/nova/static/js/runtime-main.f9afca6b.js",
+    "runtime-main.js.map": "/nova/static/js/runtime-main.f9afca6b.js.map",
+    "static/js/2.616c03c9.chunk.js": "/nova/static/js/2.616c03c9.chunk.js",
+    "static/js/2.616c03c9.chunk.js.map": "/nova/static/js/2.616c03c9.chunk.js.map",
     "index.html": "/nova/index.html",
     "static/css/main.72b00848.chunk.css.map": "/nova/static/css/main.72b00848.chunk.css.map",
-    "static/js/2.4a64d583.chunk.js.LICENSE.txt": "/nova/static/js/2.4a64d583.chunk.js.LICENSE.txt",
+    "static/js/2.616c03c9.chunk.js.LICENSE.txt": "/nova/static/js/2.616c03c9.chunk.js.LICENSE.txt",
     "static/media/index.css": "/nova/static/media/pattern-hills.815d688f.svg",
     "static/media/logo.76c5c1a5.png": "/nova/static/media/logo.76c5c1a5.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1256413c.js",
-    "static/js/2.4a64d583.chunk.js",
+    "static/js/runtime-main.f9afca6b.js",
+    "static/js/2.616c03c9.chunk.js",
     "static/css/main.72b00848.chunk.css",
-    "static/js/main.31e78bc0.chunk.js"
+    "static/js/main.8ec24e39.chunk.js"
   ]
 }
