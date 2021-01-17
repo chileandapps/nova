@@ -3,18 +3,26 @@ import { Link } from "react-router-dom";
 import Logo from "./../assets/logo.png";
 import styled from "styled-components";
 
+const LogoContainer = styled.div`
+  display:flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const NavbarContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* border: 1px solid red; */
+  height: 15vh;
 
   & .nav {
     display: flex;
-    height: 80px;
     margin-right: 2vh;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+   
 
     & .nav-item {
       margin-left: 15px;
@@ -44,9 +52,9 @@ const Navbar = ({ render, userLogged, walletInfo }) => {
   return (
     <nav>
       <NavbarContainer>
-        <div>
+        <LogoContainer>
           <img src={Logo} width="100" alt="logo" />
-        </div>
+        </LogoContainer>
         <div className="nav">
           <div className="nav-item">
             <Link to="/">Home</Link>
