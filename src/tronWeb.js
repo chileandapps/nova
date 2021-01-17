@@ -1,4 +1,5 @@
 import { CONTRACT_ADDRESS,TRX_UNIT } from "./constant";
+import { fixedDecimal } from "./utilities";
 
 const getTronWeb = () => {
   return new Promise((resolve, reject) => {
@@ -27,7 +28,7 @@ const getContract = async () => {
 const getWalletInfo = async () => {
   let address = window.tronWeb.defaultAddress.base58;
   let balance = (await window.tronWeb.trx.getBalance(address)) / TRX_UNIT;
-
+  balance = fixedDecimal(balance); 
   return {
     address,
     balance,
