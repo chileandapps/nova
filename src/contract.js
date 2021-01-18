@@ -57,7 +57,6 @@ class Contract {
     if (this.uid !== 0) {
       return {
         uid: this.uid,
-        referalLink: this.getReferalLink(),
         investorInfo: await this.getInvestorInfo(),
         investmentPlan: await this.getUserInvestmentPlan(),
       };

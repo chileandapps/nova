@@ -44,7 +44,7 @@ const NavbarContainer = styled.div`
 `;
 const getContractLink = () => {
   const link = urljoin(process.env.REACT_APP_NODE,'contract',CONTRACT_ADDRESS)
-  console.log(link);
+  // console.log(link);
   return link;
 }
 const Navbar = ({ render, userLogged, walletInfo }) => {

@@ -12,6 +12,7 @@ import {
   BoxContainer,
 } from "./DashboardStyled";
 
+
 export const Dashboard = ({
   setModal,
   contractGlobal,
@@ -38,6 +39,15 @@ export const Dashboard = ({
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const getReferalLink = () => {
+    if (contractUser.uid != "0") {
+      const location = `${window.location.protocol}//${window.location.host}?ref=${contractUser.uid} `;
+      return location;
+    }
+    
+    return "You must invest first";
   };
 
   const handleWithdrawal = (event) => {
@@ -164,7 +174,7 @@ export const Dashboard = ({
             <br />
             <div className="your-referal">
               <p>Your Referal Link:</p>
-              <p>{contractUser.referalLink}</p>
+              <p>{getReferalLink()}</p>
             </div>
             <Button className="button-fill" type="button">
               Copy Referal Link

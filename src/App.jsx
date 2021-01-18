@@ -33,6 +33,7 @@ function App() {
   const [modal, setModal] = useState(modalInitialState);
   const [userLogged,setUserLogged] = useState(false);
 
+
   //Styled
   const Container = styled.div`
     margin: 0 100px;
@@ -64,7 +65,6 @@ function App() {
       const contract = new Contract(await getContract(), walletInfo.address);
       setContract(contract);
       await contract.Initialize();
-      const referalLink = contract.getReferalLink();
 
       //Subscribe
       contract.subscribeEvents(() => {
