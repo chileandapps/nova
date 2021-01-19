@@ -43,7 +43,7 @@ export const Dashboard = ({
 
   const getReferalLink = () => {
     if (contractUser.uid != "0") {
-      const location = `${window.location.protocol}//${window.location.host}?ref=${contractUser.uid} `;
+      const location = `${window.location.protocol}//${window.location.host}/nova?ref=${contractUser.uid} `;
       return location;
     }
     
