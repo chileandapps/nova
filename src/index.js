@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./assets/index.css";
 import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="/nova">
+    {/* <Router basename="/nova"> */}
+    <Router>
       <App />
     </Router>
   </React.StrictMode>,
