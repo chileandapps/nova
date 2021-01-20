@@ -136,7 +136,10 @@ class Contract {
   }
 
   async invest(investment, referalCode) {
-    console.log("referalCode", referalCode);
+    console.log(LOG_COLOR,"INVEST", {
+      investment,
+      referalCode
+    });
     let result = await this.contract.invest(referalCode).send({
       // feeLimit:100_000_000,
       callValue: investment * TRX_UNIT,

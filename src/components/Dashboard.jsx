@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { ContractContext } from "./../store/context";
-import { useLocation } from "react-router-dom";
 import {
   Box,
   InvestContainer,
@@ -12,6 +11,7 @@ import {
   BoxContainer,
 } from "./DashboardStyled";
 
+import { REFERRAL_CODE } from "./../constant";
 
 export const Dashboard = ({
   setModal,
@@ -21,15 +21,12 @@ export const Dashboard = ({
 }) => {
   const [investment, setInvestment] = useState(0);
   const contract = useContext(ContractContext);
-  const location = useLocation();
 
   const handleInvestment = async (event) => {
-    console.log("referalCode", "asd");
     event.preventDefault();
     try {
-      const referalCode = location.search.split("=")[1];
-      const code = isNaN(referalCode) ? 0 : referalCode;
-      const hash = await contract.invest(investment, code);
+      const referralCode = localStorage.getItem(REFERRAL_CODE);
+      const hash = await contract.invest(investment, referralCode);
       console.log(hash);
       setModal({
         visible: "true",
@@ -46,7 +43,7 @@ export const Dashboard = ({
       const location = `${window.location.protocol}//${window.location.host}?ref=${contractUser.uid} `;
       return location;
     }
-    
+
     return "You must invest first";
   };
 

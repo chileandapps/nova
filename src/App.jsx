@@ -1,13 +1,15 @@
 import "./assets/App.css";
 import { useEffect, useState } from "react";
 import { getTronWeb, getContract, getWalletInfo } from "./tronWeb";
-import { LOG_COLOR } from "./constant";
+import { LOG_COLOR, REFERRAL_CODE } from "./constant";
 import { Contract } from "./contract.js";
 import { Dashboard } from "./components/Dashboard";
 import Modal from "./components/Modal";
 import Table from "./components/Table";
 import { Home } from "./components/Home";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
+import ReactJson from 'react-json-view'
 
 import {
   walletInfoInitialState,
@@ -33,11 +35,20 @@ function App() {
   const [modal, setModal] = useState(modalInitialState);
   const [userLogged,setUserLogged] = useState(false);
 
+  const location = useLocation();
 
   //Styled
   const Container = styled.div`
     margin: 0 100px;
+
+    .json{
+      width:1000px;
+      display:flex;
+      margin: 0 auto;
+    }
   `;
+
+
 
   useEffect(() => {
     fetchTronWeb()
@@ -77,6 +88,12 @@ function App() {
 
       const data = await contract.getContractUserInfo();
       setContractUser(data);
+
+      //Save referal link in local storage
+      const referalCode = location.search.split("=")[1];
+      const code = isNaN(referalCode) ? 0 : referalCode;
+      localStorage.setItem(REFERRAL_CODE, code);
+
     } catch (error) {
       console.error(error);
     }
@@ -103,6 +120,11 @@ function App() {
               />
             </ContractContext.Provider>
             <Table contractUser={contractUser} />
+            <div className="json">
+            <ReactJson src={contractUser} theme="bright" />
+            <ReactJson src={contractGlobal} theme="twilight" />
+
+            </div>
           </Route>
           <Route path="/">
             <Home />
