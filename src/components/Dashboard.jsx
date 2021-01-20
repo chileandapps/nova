@@ -121,8 +121,7 @@ export const Dashboard = ({
             <h2>Dividens</h2>
 
             <h3>
-              {contractUser.investorInfo.dividens +
-                contractUser.investorInfo.availableReferrerEarnings}
+              {contractUser.investorInfo.dividens}
             </h3>
             <Button
               onClick={handleWithdrawal}
@@ -133,7 +132,7 @@ export const Dashboard = ({
             </Button>
 
             <h2>Reinvest Wallet</h2>
-            <h3>{contractUser.investorInfo.reinvestWallet}</h3>
+            <h3>{contractUser.investorInfo.reinvestWallet + contractUser.investorInfo.availableReferrerEarnings}</h3>
             <Button
               className="button-fill"
               onClick={handleReinvest}
@@ -159,11 +158,11 @@ export const Dashboard = ({
             </ReferalItem>
             <ReferalItem>
               <p>Level 2 (5%) Referrals Deposits:</p>
-              <p>{contractUser.investorInfo.level1RefCount}</p>
+              <p>{contractUser.investorInfo.level2RefCount}</p>
             </ReferalItem>
             <ReferalItem>
               <p>Level 3 (3%) Referrals Deposits:</p>
-              <p>{contractUser.investorInfo.level1RefCount}</p>
+              <p>{contractUser.investorInfo.level3RefCount}</p>
             </ReferalItem>
 
             <br />
