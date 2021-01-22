@@ -11,6 +11,7 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import ReactJson from 'react-json-view'
 
+
 import {
   walletInfoInitialState,
   contractGlobalInfoInitialState,
@@ -18,7 +19,7 @@ import {
   modalInitialState,
 } from "./store/initialState";
 import { ContractContext } from "./store/context";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
@@ -102,9 +103,9 @@ function App() {
   return (
     <div className="App">
       <Modal modal={modal} setModal={setModal}/>
-
+      <Navbar render={ () => setRender(!render)} userLogged={userLogged} address={walletInfo.address} />
       <Container>
-        <Navbar render={ () => setRender(!render)} userLogged={userLogged} walletInfo={walletInfo} />
+        
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
