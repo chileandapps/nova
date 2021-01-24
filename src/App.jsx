@@ -5,7 +5,7 @@ import { LOG_COLOR, REFERRAL_CODE } from "./constant";
 import { Contract } from "./contract.js";
 import { Dashboard } from "./components/Dashboard";
 import Modal from "./components/Modal";
-import Table from "./components/Table";
+
 import { Home } from "./components/Home";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
@@ -118,11 +118,11 @@ function App() {
                 setModal={setModal}
               />
             </ContractContext.Provider>
-            <Table contractUser={contractUser} />
-            <div className="json">
+           
+            {/* <div className="json">
               <ReactJson src={contractUser} theme="bright" />
               <ReactJson src={contractGlobal} theme="twilight" />
-            </div>
+            </div> */}
           </Route>
           <Route path="/">
             <Home />

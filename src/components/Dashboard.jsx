@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { ContractContext } from "./../store/context";
+import Table from "./Table";
 import {
   Box,
   InvestContainer,
@@ -108,11 +109,11 @@ export const Dashboard = ({
                   name="name"
                   onChange={(event) => setInvestment(event.target.value)}
                 />
-                <div className="label-input">
+                <div className="label-input small">
                   <p>A minimum of 100 TRX for deposits</p>
                 </div>
 
-                <Button type="submit">Deposit</Button>
+                <Button type="submit" fill>Deposit</Button>
               </InvestContainer>
             </form>
           </Box>
@@ -120,9 +121,7 @@ export const Dashboard = ({
           <Box>
             <h2>Dividens</h2>
 
-            <h3>
-              {contractUser.investorInfo.dividens}
-            </h3>
+            <h3>{contractUser.investorInfo.dividens}</h3>
             <Button
               onClick={handleWithdrawal}
               type="button"
@@ -132,7 +131,10 @@ export const Dashboard = ({
             </Button>
 
             <h2>Reinvest Wallet</h2>
-            <h3>{contractUser.investorInfo.reinvestWallet + contractUser.investorInfo.availableReferrerEarnings}</h3>
+            <h3>
+              {contractUser.investorInfo.reinvestWallet +
+                contractUser.investorInfo.availableReferrerEarnings}
+            </h3>
             <Button
               className="button-fill"
               onClick={handleReinvest}
@@ -177,6 +179,7 @@ export const Dashboard = ({
             </Button>
           </Box>
         </BoxContainer>
+        <Table contractUser={contractUser} />
       </DashboardContainer>
     </div>
   );

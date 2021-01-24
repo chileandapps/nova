@@ -12,6 +12,7 @@ a {
   max-width: 650px;
   margin: 0 auto;
   margin-top: 30px;
+  margin-bottom: 2vh;
 }
 .MuiPaper-root {
   background-color: transparent !important;
@@ -24,7 +25,5 @@ a {
 .MuiTableCell-body {
   color: white !important;
 }
-
-
 
 
