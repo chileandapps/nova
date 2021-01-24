@@ -14,6 +14,7 @@ const SliderMenu = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 15vh;
+  z-index: 9;
 
   @media screen and (min-width: 600px) {
     display: none;
@@ -67,7 +68,7 @@ export const SliderNav = ({ visible, close, address, login, contractLink }) => {
             <NavBtnLink as="button" onClick={login}>
               {address.substring(0, 5)}
             </NavBtnLink>
-            <NavLink to="/dapp">Dapp</NavLink>
+            <NavLink to="/play">App</NavLink>
             <NavLink as="a" target="_blank" href={contractLink()}>
               Contract
             </NavLink>

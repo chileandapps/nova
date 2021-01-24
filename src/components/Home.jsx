@@ -19,6 +19,11 @@ const HomeContainer = styled.div`
     font-size: 90px;
     font-family: 'Russo One', sans-serif;
     flex-grow: 1;
+
+    & span{
+      font-size: 1rem;
+      padding-left: 1vw;
+    }
   }
   & p {
     margin: 3vh 0;
@@ -40,12 +45,12 @@ export const Home = () => {
   const history = useHistory();
 
   const investNow = () => {
-    history.push("/dapp");
+    history.push("/play");
   };
 
   return (
     <HomeContainer>
-      <h1>NOVA TRON</h1>
+      <h1>TRON NOVA<span><i> Beta v2.0 (Shasta)</i></span></h1>
       <p>
         Decentralized Smart-Contract Provides Fairness and Transparency.<br/>Earn
         25% daily profit up to 200% of your investment. Join Today!

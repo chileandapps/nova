@@ -20,6 +20,7 @@ import {
 import { ContractContext } from "./store/context";
 import Navbar from "./components/Navbar/";
 import { Switch, Route } from "react-router-dom";
+import About from "./components/About";
 
 function App() {
   //States
@@ -89,7 +90,8 @@ function App() {
 
       //Save referal link in local storage
       const referalCode = location.search.split("=")[1];
-      const code = isNaN(referalCode) ? 0 : referalCode;
+      // console.log(referalCode);
+      const code = isNaN(referalCode) ? 1000 : referalCode;
       localStorage.setItem(REFERRAL_CODE, code);
     } catch (error) {
       console.error(error);
@@ -108,8 +110,10 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about"></Route>
-          <Route path="/dapp">
+          <Route path="/about">
+            <About/>
+          </Route>
+          <Route path="/play">
             <ContractContext.Provider value={contract}>
               <Dashboard
                 contractGlobal={contractGlobal}

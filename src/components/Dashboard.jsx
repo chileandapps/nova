@@ -28,7 +28,7 @@ export const Dashboard = ({
     try {
       const referralCode = localStorage.getItem(REFERRAL_CODE);
       const hash = await contract.invest(investment, referralCode);
-      console.log(hash);
+      // console.log(hash);
       setModal({
         visible: "true",
         title: "You can track your transaction below",
@@ -62,7 +62,7 @@ export const Dashboard = ({
     try {
       contract.reinvest();
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
@@ -89,7 +89,7 @@ export const Dashboard = ({
 
           <div>
             <h2>Daily Profit</h2>
-            <h3>25%</h3>
+            <h3>2%</h3>
           </div>
         </HeaderBox>
         <BoxContainer>

@@ -17,7 +17,7 @@ const ModalContainer = styled.div`
     background: rgba(0, 0, 0, 0.9);
     /* border: 1px solid red; */
     color: #000;
-    z-index: 9;
+    z-index: 99;
     display:flex;
     justify-content: center;
 

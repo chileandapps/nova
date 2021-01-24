@@ -6,20 +6,20 @@ class Contract {
   constructor(contract, userAddress) {
     this.contract = contract;
     this.userAddress = userAddress;
-    console.log("%c CONTRACT", LOG_COLOR, contract);
+    // console.log("%c CONTRACT", LOG_COLOR, contract);
   }
 
   //Initialize
   async Initialize() {
     let uidHex = await this.contract.address2UID(this.userAddress).call();
-    console.log(uidHex);
+    // console.log(uidHex);
     this.uid = hexToDecimal(uidHex);
   }
 
   subscribeEvents(render) {
     this.contract.onInvest().watch((err, event) => {
 
-      console.log('event');
+      // console.log('event');
       // if (err) {
       //   console.error('Error with "method" event:', err);
       // }
@@ -136,10 +136,10 @@ class Contract {
   }
 
   async invest(investment, referalCode) {
-    console.log(LOG_COLOR,"INVEST", {
-      investment,
-      referalCode
-    });
+    // console.log(LOG_COLOR,"INVEST", {
+    //   investment,
+    //   referalCode
+    // });
     let result = await this.contract.invest(referalCode).send({
       // feeLimit:100_000_000,
       callValue: investment * TRX_UNIT,
@@ -153,12 +153,12 @@ class Contract {
 
   async withdraw() {
     let result = await this.contract.withdraw().send({});
-    console.log(result);
+    // console.log(result);
   }
 
   async reinvest() {
     let result = await this.contract.reinvest().send({});
-    console.log(result);
+    // console.log(result);
   }
 }
 
