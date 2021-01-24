@@ -5,10 +5,11 @@ import { NavLink as Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
 export const NavContainer = styled.nav`
-  height: 15vh;
+  min-height: 15vh;
   display: flex;
   justify-content: space-between;
   padding: 0 3vw;
+  /* border: 1px solid green; */
 `;
 
 export const NavLink = styled(Link)`
@@ -19,6 +20,15 @@ export const NavLink = styled(Link)`
   &.active {
     color: #8385a9;
   }
+`;
+
+export const NavImg = styled(Link)`
+text-decoration: none;
+padding: 0 1rem;
+cursor: pointer;
+display:flex;
+align-items:center;
+
 `;
 
 export const Burger = styled(FaBars)`
@@ -65,9 +75,9 @@ export const NavBtnLink = styled(Link)`
 export const Nav = ({ burgerClick, contractLink, address, login }) => {
   return (
     <NavContainer>
-      <NavLink to="/">
-        <img src={Logo} width="100" alt="logo" />
-      </NavLink>
+      <NavImg to="/">
+        <img src={Logo} width="80" alt="logo" />
+      </NavImg>
 
       <NavMenu>
         <NavLink to="/dapp">Dapp</NavLink>

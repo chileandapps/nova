@@ -4,46 +4,36 @@ import { useHistory } from "react-router";
 import { ButtonLarge } from "./../components/DashboardStyled";
 
 const HomeContainer = styled.div`
-  width: 50vw;
-  height: 70vh;
+  width: 100%;
+  min-height: 85vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid green; */
+  /* border: 1px solid orange; */
+  padding-top: 10vh;
+
 
   & h1 {
     font-size: 90px;
     font-family: 'Russo One', sans-serif;
+    flex-grow: 1;
   }
   & p {
-    margin: 10px 0;
+    margin: 3vh 0;
     font-size: 24px;
     color: #8385a9;
-  }
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  align-items: center;
-  & button {
-    margin-right: 1vh;
-    width: 140px;
-  }
-
-  & a {
-    margin-right: 1vh;
+    flex-grow: 1;
   }
 `;
 
 const Footer = styled.div`
-  position: fixed;
-  left: 50%;
-    transform: translate(-50%, 0);
-  bottom: 0;
-  width: 85vh;
-  margin-bottom: 20px;
+  padding: 4vh 0;
+  /* border: 1px solid green; */
+  flex-grow:10;
+  display: flex;
+  align-items: flex-end;
 `;
 
 export const Home = () => {
@@ -57,7 +47,7 @@ export const Home = () => {
     <HomeContainer>
       <h1>NOVA TRON</h1>
       <p>
-        Decentralized Smart-Contract Provides Fairness and Transparency. Earn
+        Decentralized Smart-Contract Provides Fairness and Transparency.<br/>Earn
         25% daily profit up to 200% of your investment. Join Today!
       </p>
 
