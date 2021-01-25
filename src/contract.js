@@ -1,4 +1,4 @@
-import { TRX_UNIT, LOG_COLOR } from "./constant";
+import { TRX_UNIT } from "./constant";
 import { hexToTrx, hexToDecimal } from "./utilities";
 import { contractUserInfoInitialState } from "./store/initialState";
 
@@ -153,12 +153,12 @@ class Contract {
 
   async withdraw() {
     let result = await this.contract.withdraw().send({});
-    // console.log(result);
+    return result;
   }
 
   async reinvest() {
     let result = await this.contract.reinvest().send({});
-    // console.log(result);
+    return result;
   }
 }
 

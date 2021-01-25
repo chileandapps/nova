@@ -53,7 +53,7 @@ export const Home = () => {
       <h1>TRON NOVA<span><i> Beta v2.0 (Shasta)</i></span></h1>
       <p>
         Decentralized Smart-Contract Provides Fairness and Transparency.<br/>Earn
-        25% daily profit up to 200% of your investment. Join Today!
+        2% daily profit up to 200% of your investment. Join Today!
       </p>
 
       <ButtonLarge type="button" onClick={investNow}>

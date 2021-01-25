@@ -1,15 +1,14 @@
 import "./assets/App.css";
 import { useEffect, useState } from "react";
 import { getTronWeb, getContract, getWalletInfo } from "./tronWeb";
-import { LOG_COLOR, REFERRAL_CODE } from "./constant";
+import { REFERRAL_CODE } from "./constant";
 import { Contract } from "./contract.js";
 import { Dashboard } from "./components/Dashboard";
 import Modal from "./components/Modal";
-
 import { Home } from "./components/Home";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
-import ReactJson from "react-json-view";
+// import ReactJson from "react-json-view";
 
 import {
   walletInfoInitialState,
@@ -62,6 +61,7 @@ function App() {
           text: "Please sign in the browser TronLink extension",
         });
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [render]);
 
   const fetchTronWeb = async () => {
@@ -111,7 +111,7 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/about">
-            <About/>
+            <About />
           </Route>
           <Route path="/play">
             <ContractContext.Provider value={contract}>
@@ -122,7 +122,7 @@ function App() {
                 setModal={setModal}
               />
             </ContractContext.Provider>
-           
+
             {/* <div className="json">
               <ReactJson src={contractUser} theme="bright" />
               <ReactJson src={contractGlobal} theme="twilight" />

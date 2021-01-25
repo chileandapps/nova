@@ -40,7 +40,7 @@ export const Dashboard = ({
   };
 
   const getReferalLink = () => {
-    if (contractUser.uid != "0") {
+    if (contractUser.uid !== "0") {
       const location = `${window.location.protocol}//${window.location.host}?ref=${contractUser.uid} `;
       return location;
     }
@@ -48,19 +48,29 @@ export const Dashboard = ({
     return "You must invest first";
   };
 
-  const handleWithdrawal = (event) => {
+  const handleWithdrawal = async (event) => {
     event.preventDefault();
     try {
-      contract.withdraw();
+      const hash = await contract.withdraw();
+      setModal({
+        visible: "true",
+        title: "You can track your transaction below",
+        text: `View on TRONSCAN: ${hash}`,
+      });
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleReinvest = (event) => {
+  const handleReinvest = async (event) => {
     event.preventDefault();
     try {
-      contract.reinvest();
+      const hash = await contract.reinvest();
+      setModal({
+        visible: "true",
+        title: "You can track your transaction below",
+        text: `View on TRONSCAN: ${hash}`,
+      });
     } catch (err) {
       console.error(err);
     }

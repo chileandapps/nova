@@ -21,16 +21,6 @@ const useStyles = makeStyles((theme) => ({
 const About = () => {
   const classes = useStyles();
 
-  const walletSuporttedList = () => {
-    return (
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
-    );
-  };
-
   return (
     <div className={classes.root}>
       <AccordionItem

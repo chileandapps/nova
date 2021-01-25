@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { modalInitialState } from "./../store/initialState";
-import { CSSTransition } from "react-transition-group"; // ES6
 
 const ModalContainer = styled.div`
   position: absolute;
@@ -62,7 +61,8 @@ const Modal = ({ modal, setModal }) => {
               <div className="modal-content">
                 {/* <h3>You can track your transaction below: </h3> */}
                 <h3>{modal.title}</h3>
-                <p>{modal.text}</p>
+                <div>{modal.text}</div>
+                {/* <p>{modal.text}</p> */}
               </div>
             {/* </CSSTransition> */}
           </div>
