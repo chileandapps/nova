@@ -89,13 +89,13 @@ export const Dashboard = ({
             <h2>Contract Balance</h2>
             <h3>{contractGlobal.getContractBalance} </h3>
           </div>
-          <div>
+          {/* <div>
             <h2>TRX Payout</h2>
             <h3>
               {contractGlobal.totalInvestments -
                 contractGlobal.getContractBalance}{" "}
             </h3>
-          </div>
+          </div> */}
 
           <div>
             <h2>Daily Profit</h2>

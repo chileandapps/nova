@@ -18,7 +18,6 @@ class Contract {
 
   subscribeEvents(render) {
     this.contract.onInvest().watch((err, event) => {
-
       // console.log('event');
       // if (err) {
       //   console.error('Error with "method" event:', err);
@@ -78,7 +77,9 @@ class Contract {
     let investorInfo = await this.contract
       .getInvestorInfoByUID(this.uid)
       .call();
-    // console.log("investorInfo", investorInfo);
+
+    const divs = investorInfo[9].reduce((a, b) => a + hexToTrx(b),0);
+
 
     return {
       referrerEarnings: hexToTrx(investorInfo[0]),
@@ -92,7 +93,7 @@ class Contract {
       checkpoint: new Date(
         hexToDecimal(investorInfo[8]) * 1000
       ).toLocaleString(),
-      dividens: hexToTrx(investorInfo[9][0]),
+      dividens: divs,
     };
   }
   //8
