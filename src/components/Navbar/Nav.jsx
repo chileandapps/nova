@@ -17,18 +17,17 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   cursor: pointer;
 
-  &.active {
+  /* &.active {
     color: #8385a9;
-  }
+  } */
 `;
 
 export const NavImg = styled(Link)`
-text-decoration: none;
-padding: 0 1rem;
-cursor: pointer;
-display:flex;
-align-items:center;
-
+  text-decoration: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 `;
 
 export const Burger = styled(FaBars)`
@@ -57,7 +56,7 @@ export const NavMenu = styled.div`
 
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
-  background-color: black;
+  background-color: #343650;
   padding: 10px 22px;
   color: white;
   border: none;
@@ -70,6 +69,14 @@ export const NavBtnLink = styled(Link)`
     transition: all 0.2s ease-in-out;
     background: #fb5e84;
   }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active{
+    transform: scale(.9);
+  }
 `;
 
 export const Nav = ({ burgerClick, contractLink, address, login }) => {
@@ -79,13 +86,15 @@ export const Nav = ({ burgerClick, contractLink, address, login }) => {
         <img src={Logo} width="80" alt="logo" />
       </NavImg>
 
-
       <NavMenu>
         <NavLink to="/play">App</NavLink>
         <NavLink as="a" target="_blank" href={contractLink()}>
           Contract
         </NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink as="a" target="_blank" href="#">
+          Telegram
+        </NavLink>
         <NavBtnLink as="button" onClick={login}>
           {" "}
           {address.substring(0, 5)}

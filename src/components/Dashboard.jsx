@@ -14,6 +14,7 @@ import {
 
 import { REFERRAL_CODE } from "./../constant";
 
+
 export const Dashboard = ({
   setModal,
   contractGlobal,
@@ -22,6 +23,10 @@ export const Dashboard = ({
 }) => {
   const [investment, setInvestment] = useState(0);
   const contract = useContext(ContractContext);
+
+  const copyReferalLink = () => {
+    window.navigator.clipboard.writeText(getReferalLink());
+  }
 
   const handleInvestment = async (event) => {
     event.preventDefault();
@@ -41,8 +46,8 @@ export const Dashboard = ({
 
   const getReferalLink = () => {
     if (contractUser.uid !== "0") {
-      const location = `${window.location.protocol}//${window.location.host}?ref=${contractUser.uid} `;
-      return location;
+      const referalLink = `${window.location.protocol}//${window.location.host}?ref=${contractUser.uid} `;
+      return referalLink;
     }
 
     return "You must invest first";
@@ -184,7 +189,7 @@ export const Dashboard = ({
               <p>Your Referal Link:</p>
               <p>{getReferalLink()}</p>
             </div>
-            <Button className="button-fill" type="button">
+            <Button onClick={copyReferalLink} className="button-fill" type="button">
               Copy Referal Link
             </Button>
           </Box>

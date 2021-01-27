@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "80%",
     margin: "0 auto",
+    'padding-bottom': '2vh'
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),

@@ -36,6 +36,14 @@ export const NavBtnLink = styled(Link)`
     transition: all 0.2s ease-in-out;
     background: #fb5e84;
   }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active{
+    transform: scale(.9);
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -44,9 +52,9 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   margin: 1vh 0;
 
-  &.active {
+  /* &.active {
     color: #8385a9;
-  }
+  } */
 `;
 
 export const CloseIcon = styled(AiOutlineClose)`
@@ -73,6 +81,9 @@ export const SliderNav = ({ visible, close, address, login, contractLink }) => {
               Contract
             </NavLink>
             <NavLink to="/about">About</NavLink>
+            <NavLink as="a" target="_blank" href="#">
+              Telegram
+            </NavLink>
           </SliderMenu>
         </>
       )}
