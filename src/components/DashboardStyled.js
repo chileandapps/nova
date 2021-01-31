@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { BsInfoCircle } from "react-icons/bs";
+
 
 export const DashboardContainer = styled.div`
   margin-top: 30px;
@@ -19,6 +21,11 @@ export const DashboardContainer = styled.div`
     text-align: center;
   }
 `;
+export const InfoIcon = styled(BsInfoCircle)`
+  font-size: 16px;
+  color: white;
+`;
+
 
 export const HeaderBox = styled.div`
   width: 100%;
@@ -97,6 +104,11 @@ export const ReferalItem = styled.div`
   font-size: 0.8rem;
 `;
 
+export const HashLink = styled.a`
+color: #fb5e84;
+text-decoration: none;
+`;
+
 export const Button = styled.button`
   display: inline-block;
   margin-top: 10px;
@@ -113,8 +125,8 @@ export const Button = styled.button`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: hsl(234, 17%, 12%);
-    box-shadow: 1px 2px black;
+    background: #31283b;
+    box-shadow: 1px 2px #1f2028;
   }
 
   &:focus {
@@ -132,6 +144,8 @@ export const ButtonLarge = styled(Button)`
   padding: 14px 0;
 
   &:hover{
-    background: #343650
+    transition: all 0.2s ease-in-out;
+    background: #31283b;
+    box-shadow: 1px 2px #1f2028;
   }
 `;

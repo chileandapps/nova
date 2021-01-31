@@ -41,10 +41,6 @@ class Contract {
     });
   }
 
-  getReferalLink() {
-    return `http://localhost:3000?ref=${this.uid}`;
-  }
-
   async getContractGlobalInfo() {
     return {
       getContractBalance: await this.getCurrentContractBalance(),

@@ -36,5 +36,5 @@ export const contractUserInfoInitialState = {
 export const modalInitialState = {
   visible: false,
   title: 'title',
-  text: 'text',
+  text: {},
 }

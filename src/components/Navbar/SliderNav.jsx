@@ -81,7 +81,7 @@ export const SliderNav = ({ visible, close, address, login, contractLink }) => {
               Contract
             </NavLink>
             <NavLink to="/about">About</NavLink>
-            <NavLink as="a" target="_blank" href="#">
+            <NavLink as="a" target="_blank" href="https://t.me/TronNovaTRX">
               Telegram
             </NavLink>
           </SliderMenu>

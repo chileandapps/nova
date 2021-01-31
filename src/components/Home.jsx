@@ -62,10 +62,7 @@ export const Home = () => {
 
       <Footer>
         <small>
-          *Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet,
-          est doloremque accusamus nisi autem corrupti, amet optio obcaecati
-          nemo nostrum voluptatibus soluta esse unde ratione iste. Esse
-          perferendis voluptatibus.
+        This descentralized application has been made for entertainment purposes and should be considered as such. No guarantees or warranties are given.
         </small>
       </Footer>
     </HomeContainer>

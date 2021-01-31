@@ -2,6 +2,9 @@ import React from "react";
 import { useState, useContext } from "react";
 import { ContractContext } from "./../store/context";
 import Table from "./Table";
+import urljoin from "url-join";
+import { useHistory  } from "react-router-dom";
+
 import {
   Box,
   InvestContainer,
@@ -10,10 +13,11 @@ import {
   DashboardContainer,
   HeaderBox,
   BoxContainer,
+  HashLink,
+  InfoIcon,
 } from "./DashboardStyled";
 
 import { REFERRAL_CODE } from "./../constant";
-
 
 export const Dashboard = ({
   setModal,
@@ -23,21 +27,31 @@ export const Dashboard = ({
 }) => {
   const [investment, setInvestment] = useState(0);
   const contract = useContext(ContractContext);
-
+  let history = useHistory();
   const copyReferalLink = () => {
     window.navigator.clipboard.writeText(getReferalLink());
-  }
+  };
 
   const handleInvestment = async (event) => {
     event.preventDefault();
+
+    if (investment < 100) return;
+
     try {
       const referralCode = localStorage.getItem(REFERRAL_CODE);
       const hash = await contract.invest(investment, referralCode);
       // console.log(hash);
+
+      const hashLink = urljoin(process.env.REACT_APP_NODE, "transaction", hash);
+
       setModal({
         visible: "true",
         title: "You can track your transaction below",
-        text: `View on TRONSCAN: ${hash}`,
+        text: (
+          <HashLink href={hashLink} target="_blank">
+            View on TRONSCAN: {hash}
+          </HashLink>
+        ),
       });
     } catch (error) {
       console.error(error);
@@ -45,13 +59,17 @@ export const Dashboard = ({
   };
 
   const getReferalLink = () => {
-    if (contractUser.uid !== "0") {
+    if (contractUser.uid != "0") {
       const referalLink = `${window.location.protocol}//${window.location.host}?ref=${contractUser.uid} `;
       return referalLink;
     }
 
     return "You must invest first";
   };
+
+  const goToAbout = (idPanel) => {
+    history.push("/about",{ idPanel });
+  }
 
   const handleWithdrawal = async (event) => {
     event.preventDefault();
@@ -94,13 +112,6 @@ export const Dashboard = ({
             <h2>Contract Balance</h2>
             <h3>{contractGlobal.getContractBalance} </h3>
           </div>
-          {/* <div>
-            <h2>TRX Payout</h2>
-            <h3>
-              {contractGlobal.totalInvestments -
-                contractGlobal.getContractBalance}{" "}
-            </h3>
-          </div> */}
 
           <div>
             <h2>Daily Profit</h2>
@@ -145,7 +156,10 @@ export const Dashboard = ({
               Withdraw
             </Button>
 
-            <h2>Reinvest Wallet</h2>
+   
+              <h2>Reinvest Wallet &nbsp;<InfoIcon onClick={ () => goToAbout(6)} /></h2> 
+
+
             <h3>
               {contractUser.investorInfo.reinvestWallet +
                 contractUser.investorInfo.availableReferrerEarnings}
@@ -189,7 +203,11 @@ export const Dashboard = ({
               <p>Your Referal Link:</p>
               <p>{getReferalLink()}</p>
             </div>
-            <Button onClick={copyReferalLink} className="button-fill" type="button">
+            <Button
+              onClick={copyReferalLink}
+              className="button-fill"
+              type="button"
+            >
               Copy Referal Link
             </Button>
           </Box>

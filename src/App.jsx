@@ -33,6 +33,9 @@ function App() {
     contractGlobalInfoInitialState
   );
   const [modal, setModal] = useState(modalInitialState);
+
+
+
   const [userLogged, setUserLogged] = useState(false);
 
   const location = useLocation();
@@ -88,11 +91,12 @@ function App() {
       const data = await contract.getContractUserInfo();
       setContractUser(data);
 
-      //Save referal link in local storage
-      const referalCode = location.search.split("=")[1];
-      // console.log(referalCode);
-      const code = isNaN(referalCode) ? 1000 : referalCode;
-      localStorage.setItem(REFERRAL_CODE, code);
+      if (!localStorage.getItem(REFERRAL_CODE)) {
+        //Save referal link in local storage
+        const referalCode = location.search.split("=")[1];
+        const code = isNaN(referalCode) ? 1000 : referalCode;
+        localStorage.setItem(REFERRAL_CODE, code);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -111,7 +115,7 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/about">
-            <About />
+            <About/>
           </Route>
           <Route path="/play">
             <ContractContext.Provider value={contract}>

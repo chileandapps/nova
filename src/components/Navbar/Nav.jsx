@@ -92,7 +92,7 @@ export const Nav = ({ burgerClick, contractLink, address, login }) => {
           Contract
         </NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink as="a" target="_blank" href="#">
+        <NavLink as="a" target="_blank" href="https://t.me/TronNovaTRX">
           Telegram
         </NavLink>
         <NavBtnLink as="button" onClick={login}>
