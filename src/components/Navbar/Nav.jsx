@@ -87,6 +87,7 @@ export const Nav = ({ burgerClick, contractLink, address, login }) => {
       </NavImg>
 
       <NavMenu>
+      <NavLink to="/">Home</NavLink>
         <NavLink to="/play">App</NavLink>
         <NavLink as="a" target="_blank" href={contractLink()}>
           Contract

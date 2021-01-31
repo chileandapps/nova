@@ -76,6 +76,7 @@ export const SliderNav = ({ visible, close, address, login, contractLink }) => {
             <NavBtnLink as="button" onClick={login}>
               {address.substring(0, 5)}
             </NavBtnLink>
+            <NavLink to="/">Home</NavLink>
             <NavLink to="/play">App</NavLink>
             <NavLink as="a" target="_blank" href={contractLink()}>
               Contract
