@@ -20,14 +20,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 const About = () => {
   const classes = useStyles();
   const location = useLocation();
 
-  const idPanel = location.state ? location.state.idPanel : "1"
-
+  const idPanel = location.state ? location.state.idPanel : "1";
 
   return (
     <div className={classes.root}>
@@ -36,7 +33,7 @@ const About = () => {
         expanded={idPanel}
         classes={classes}
         title="1. What is TronNova.app?"
-        text="TronNova.app is a ROI based smart contract where you as an investor will receive a fixed percentage which is agreed based upon your investment."
+        text="TronNova.app is a ROI(2% daily up to 200%) based smart contract where you as an investor will receive a fixed percentage which is agreed based upon your investment."
       />
       <AccordionItem
         id="2"
@@ -72,7 +69,7 @@ const About = () => {
         expanded={idPanel}
         classes={classes}
         title="6. How does the reinvest works?"
-        text="Reinvest can be used always to compound profit. The sustainability of the contract is when there is funds in the contract. Thus when you reinvest two good things happens, the contract balance doesn't decreases and your profit increases due to compounding effect."
+        text="Reinvest can be used always to compound profit (current dividens). The sustainability of the contract is when there is funds in the contract. When you reinvest two good things happens, the contract balance doesn't decreases and your profit increases due to compounding effect. Note: All referral earnings are added here."
       />
       <AccordionItem
         id="7"
@@ -85,7 +82,14 @@ const About = () => {
         id="8"
         expanded={idPanel}
         classes={classes}
-        title="8. What are the fees?"
+        title="8. How does the referral program works?"
+        text="When you invest for the first time a referral link is generated. There are 3 levels of referrals based on the amount of investment; Level 1 (10%), Level 2 (5%), Level 3 (3%). All referral earnings are added to reinvest wallet, so you need Reinvest to start earning."
+      />
+      <AccordionItem
+        id="9"
+        expanded={idPanel}
+        classes={classes}
+        title="9. What are the fees?"
         text="For every Investment, 2% of the investment goes for Marketing, and 6% goes for Development, Maintenance, Operations & Education.
         However this fees won't affect your Investment, if you invest 1000 Trx, you will earn based on 1000 Trx."
       />

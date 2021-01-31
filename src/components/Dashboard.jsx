@@ -157,7 +157,7 @@ export const Dashboard = ({
           </Box>
 
           <Box>
-            <h2>Dividens</h2>
+            <h2>Dividens &nbsp; <InfoIcon onClick={ () => goToAbout(5)} /></h2> 
 
             <h3>{contractUser.investorInfo.dividens}</h3>
             <Button
@@ -186,7 +186,8 @@ export const Dashboard = ({
           </Box>
 
           <Box>
-            <h2 className="mb-10">Referal Info</h2>
+            <h2 className="mb-10">Referal Info &nbsp;<InfoIcon onClick={ () => goToAbout(8)} /></h2> 
+
             <ReferalItem>
               <p>Total Referral Reward Earning:</p>
               <p>{contractUser.investorInfo.referrerEarnings}</p>
