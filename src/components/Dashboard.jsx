@@ -40,7 +40,6 @@ export const Dashboard = ({
     try {
       const referralCode = localStorage.getItem(REFERRAL_CODE);
       const hash = await contract.invest(investment, referralCode);
-      // console.log(hash);
 
       const hashLink = urljoin(process.env.REACT_APP_NODE, "transaction", hash);
 
@@ -68,17 +67,23 @@ export const Dashboard = ({
   };
 
   const goToAbout = (idPanel) => {
-    history.push("/about",{ idPanel });
+    history.push("/faqs",{ idPanel });
   }
 
   const handleWithdrawal = async (event) => {
     event.preventDefault();
     try {
       const hash = await contract.withdraw();
+      const hashLink = urljoin(process.env.REACT_APP_NODE, "transaction", hash);
+
       setModal({
         visible: "true",
         title: "You can track your transaction below",
-        text: `View on TRONSCAN: ${hash}`,
+        text: (
+          <HashLink href={hashLink} target="_blank">
+            View on TRONSCAN: {hash}
+          </HashLink>
+        ),
       });
     } catch (error) {
       console.error(error);
@@ -89,10 +94,17 @@ export const Dashboard = ({
     event.preventDefault();
     try {
       const hash = await contract.reinvest();
+      const hashLink = urljoin(process.env.REACT_APP_NODE, "transaction", hash);
+
+      
       setModal({
         visible: "true",
         title: "You can track your transaction below",
-        text: `View on TRONSCAN: ${hash}`,
+        text: (
+          <HashLink href={hashLink} target="_blank">
+            View on TRONSCAN: {hash}
+          </HashLink>
+        ),
       });
     } catch (err) {
       console.error(err);

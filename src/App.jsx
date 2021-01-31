@@ -114,7 +114,7 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
+          <Route path="/faqs">
             <About/>
           </Route>
           <Route path="/play">

@@ -4,12 +4,18 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-
+import {useState} from "react";
 
 const AccordionItem = ({ classes, title, text, id, expanded }) => {
 
+  const [expandedState, setExpandedState] = useState(id == expanded);
+
+  const change = () => {
+    setExpandedState(!expandedState);
+  }
+
   return (
-    <Accordion expanded={id == expanded} className={classes.theme}>
+    <Accordion onChange={() => change() } expanded={expandedState} className={classes.theme}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"
@@ -18,7 +24,7 @@ const AccordionItem = ({ classes, title, text, id, expanded }) => {
         <Typography className={classes.heading}>{title}</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography aling="justify">{text}</Typography>
+        <Typography aling="left">{text}</Typography>
       </AccordionDetails>
     </Accordion>
   );
