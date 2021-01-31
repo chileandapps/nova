@@ -50,7 +50,8 @@ export const Home = () => {
 
   return (
     <HomeContainer>
-      <h1>TRON NOVA<span><i> Beta v2.0 (Shasta)</i></span></h1>
+      {/* <span><i> Beta v2.0 (Shasta)</i></span> */}
+      <h1>TRON NOVA</h1>
       <p>
         Decentralized Smart-Contract Provides Fairness and Transparency.<br/>Earn
         2% daily profit up to 200% of your investment. Join Today!
