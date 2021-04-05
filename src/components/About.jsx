@@ -69,7 +69,7 @@ const About = () => {
         expanded={idPanel}
         classes={classes}
         title="6. How does the reinvest works?"
-        text="Reinvest can be used always to compound profit (current dividens). The sustainability of the contract is when there is funds in the contract. When you reinvest two good things happens, the contract balance doesn't decreases and your profit increases due to compounding effect. Note: All referral earnings are added here."
+        text="Reinvest can be used always to compound profit (current dividens). The sustainability of the contract is when there is funds in the contract. When you reinvest two good things happens, the contract balance doesn't decreases and your profit increases due to compounding effect. Note: All referral earnings are added here, a minimum of 100 trx is required for reinvestment."
       />
       <AccordionItem
         id="7"

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router";
 import { ButtonLarge } from "./../components/DashboardStyled";
+import Advisors from "./../components/Advisors";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -14,13 +15,12 @@ const HomeContainer = styled.div`
   /* border: 1px solid orange; */
   padding-top: 10vh;
 
-
   & h1 {
     font-size: 90px;
-    font-family: 'Russo One', sans-serif;
+    font-family: "Russo One", sans-serif;
     flex-grow: 1;
 
-    & span{
+    & span {
       font-size: 1rem;
       padding-left: 1vw;
     }
@@ -36,7 +36,7 @@ const HomeContainer = styled.div`
 const Footer = styled.div`
   padding: 4vh 0;
   /* border: 1px solid green; */
-  flex-grow:10;
+  flex-grow: 1;
   display: flex;
   align-items: flex-end;
 `;
@@ -53,17 +53,22 @@ export const Home = () => {
       {/* <span><i> Beta v2.0 (Shasta)</i></span> */}
       <h1>TRON NOVA</h1>
       <p>
-        Decentralized Smart-Contract Provides Fairness and Transparency.<br/>Earn
-        2% daily profit up to 200% of your investment. Join Today!
+        Decentralized Smart-Contract Provides Fairness and Transparency.
+        <br />
+        Earn 2% daily profit up to 200% of your investment. Join Today!
       </p>
 
       <ButtonLarge type="button" onClick={investNow}>
         Invest Now
       </ButtonLarge>
 
+      <Advisors />
+
       <Footer>
         <small>
-        This descentralized application has been made for entertainment purposes and should be considered as such. No guarantees or warranties are given.
+          This descentralized application has been made for entertainment
+          purposes and should be considered as such. No guarantees or warranties
+          are given.
         </small>
       </Footer>
     </HomeContainer>
